@@ -1,7 +1,9 @@
 const Splash = () => {
   return (
     <>
-      <h1>Do you like Pokemon?</h1>
+      <div className="text-bold">
+        <h1>Do you like Pokemon?</h1>
+      </div>
     </>
   );
 };
