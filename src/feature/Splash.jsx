@@ -1,7 +1,7 @@
 const Splash = () => {
   return (
     <>
-      <div className="text-bold">
+      <div className="">
         <h1>Do you like Pokemon?</h1>
       </div>
     </>

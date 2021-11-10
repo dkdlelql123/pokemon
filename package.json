@@ -9,6 +9,8 @@
   "dependencies": {
     "@craco/craco": "^6.4.0",
     "classnames": "^2.3.1",
+    "daisy": "^0.2.0",
+    "daisyui": "^1.16.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-query": "^3.28.0",
