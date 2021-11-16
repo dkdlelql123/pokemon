@@ -12,7 +12,7 @@ const App = () => {
           <Switch>
             <Route path="/pokemon/detail" component={PokemonDetail} />
             <Route path="/pokemons" component={Pokemon} />
-            <Route path="/" component={Splash} exact />
+            <Route path="/" component={Splash} />
           </Switch>
         </Router>
       </div>
