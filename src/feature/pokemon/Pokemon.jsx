@@ -96,7 +96,6 @@ const Pokemon = () => {
           Pokemon
         </h1>
         <ul>
-          <li>[]뒤로가기</li>
           <li>[]이미지, 상세 정조 불러오기</li>
           <li>[]검색기능</li>
         </ul>

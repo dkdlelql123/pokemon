@@ -1,12 +1,35 @@
+import { useState } from "react";
+import { useQuery } from "react-query";
 import { useLocation } from "react-router-dom";
 
-function useQuery() {
+function useQueryParams() {
   return new URLSearchParams(useLocation().search);
 }
 
 const PokemonDetail = ({ history }) => {
-  let query = useQuery();
-  const id = query.get("id");
+  const queryParams = useQueryParams();
+  const id = parseInt(queryParams.get("id"));
+  console.log(id);
+
+  const [pokemon, setPokemon] = useState([]);
+
+  const pokeAPI = "https://pokeapi.co/api/v2/pokemon";
+  const {
+    isLoading: pokeIsLoading,
+    error: pokeError,
+    data: pokeData,
+  } = useQuery(`pokemon?${id}`, () =>
+    fetch(`${pokeAPI}/${id}`).then((res) => res.json())
+  );
+
+  if (!pokeData) return "None Data";
+  if (pokeError) return "error" + error.message;
+
+  if (pokeIsLoading) {
+    console.log("loading");
+    return "loding...";
+  }
+  console.log(pokeData);
 
   return (
     <>
@@ -21,6 +44,28 @@ const PokemonDetail = ({ history }) => {
         >
           {" "}
           ←{" "}
+        </div>
+      </div>
+
+      <div className="flex flex-1 flex-col gap-3 items-center">
+        <div className="flex justify-center gap-1">
+          <div>
+            <img
+              src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/1.png"
+              alt="{pokeData.name}"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col gap-1 items-center bg-indigo-200 mx-auto py-4 px-6 rounded-box">
+          <div className="w-full">이름 : {pokeData.name}</div>
+          <div className="w-full">키 : {pokeData.height}</div>
+          <div className="w-full">무게 : {pokeData.weight}</div>
+          <div className="w-full">
+            스킬 :{" "}
+            {pokeData.abilities.map((ability, idx) => (
+              <div>- {ability.ability.name}</div>
+            ))}
+          </div>
         </div>
       </div>
     </>
