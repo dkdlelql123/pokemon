@@ -51,17 +51,17 @@ const PokemonDetail = ({ history }) => {
         <div className="flex justify-center gap-1">
           <div>
             <img
-              src="https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/1.png"
+              src={`https://cdn.jsdelivr.net/gh/PokeAPI/sprites/sprites/pokemon/${id}.png`}
               alt="{pokeData.name}"
             />
           </div>
         </div>
-        <div className="flex flex-col gap-1 items-center bg-indigo-200 mx-auto py-4 px-6 rounded-box">
-          <div className="w-full">이름 : {pokeData.name}</div>
-          <div className="w-full">키 : {pokeData.height}</div>
-          <div className="w-full">무게 : {pokeData.weight}</div>
+        <div className="flex flex-col gap-2 items-center bg-indigo-200 mx-auto py-4 px-6 rounded-box text-sm">
+          <div className="w-full">name : {pokeData.name} </div>
+          <div className="w-full">height : {pokeData.height}</div>
+          <div className="w-full">weight : {pokeData.weight}</div>
           <div className="w-full">
-            스킬 :{" "}
+            skills :{" "}
             {pokeData.abilities.map((ability, idx) => (
               <div>- {ability.ability.name}</div>
             ))}
