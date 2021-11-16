@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const Splash = ({ history }) => {
   useEffect(() => {
     let timer = setTimeout(() => {
-      history.push("/pokemon");
+      history.push("/pokemons");
     }, 2400);
   }, []);
 
