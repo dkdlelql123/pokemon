@@ -43,7 +43,7 @@ const PokemonList = () => {
 
   return (
     <>
-      <ul className="container mx-auto flex flex-wrap gap-[12px] max-w-md">
+      <ul className="container mx-auto flex flex-wrap gap-[12px] max-w-md px-12">
         {pokemons.map((el, idx) => {
           let id = getParamsUrl(el.url);
           return (
