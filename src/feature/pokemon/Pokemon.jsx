@@ -33,7 +33,6 @@ const PokemonList = () => {
   };
 
   const btnPokemonMore = () => {
-    console.log("more");
     setLimit(
       limit + maxPokemonInAPage >= pokemonTotal
         ? pokemonTotal
@@ -43,7 +42,7 @@ const PokemonList = () => {
 
   return (
     <>
-      <ul className="container mx-auto flex flex-wrap gap-[12px] max-w-md px-12">
+      <ul className="container mx-auto flex flex-wrap gap-[12px] max-w-md px-[12px]">
         {pokemons.map((el, idx) => {
           let id = getParamsUrl(el.url);
           return (
@@ -74,6 +73,7 @@ const PokemonList = () => {
           "bottom-0",
           "transition",
           "duration-300",
+          "rounded-none",
           { loading: isLoading }
         )}
         onClick={btnPokemonMore}
@@ -88,10 +88,10 @@ const Pokemon = () => {
   return (
     <>
       <div className="relative">
-        <div className="fixed top-0 left-0 right-0 text-center h-[36px] w-full filter bg-white opacity-20"></div>
+        <div className="fixed top-0 left-0 right-0 text-center h-[48px] w-full filter bg-white opacity-20"></div>
         <h1
-          className="sticky top-0 text-white font-bold mb-4 text-center h-[36px]"
-          style={{ lineHeight: "36px" }}
+          className="sticky top-0 text-white font-bold text-lg mb-4 text-center "
+          style={{ lineHeight: "48px" }}
         >
           Pokemon
         </h1>
