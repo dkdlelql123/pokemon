@@ -57,8 +57,8 @@ const PokemonDetail = ({ history }) => {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-2 items-center bg-indigo-200 py-4 px-6 rounded-box text-sm max-w-md w-full">
-          <div className="w-full">name : {pokeData.name} </div>
+        <div className="flex flex-col gap-2 items-center bg-indigo-200 py-4 px-6 rounded-box text-sm max-w-md w-full text-gray-800">
+          <div className="w-full text-gray-800">name : {pokeData.name} </div>
           <div className="w-full">height : {pokeData.height}</div>
           <div className="w-full">weight : {pokeData.weight}</div>
           <div className="w-full">
